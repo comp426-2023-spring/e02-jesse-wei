@@ -8,6 +8,13 @@
  * Called when opponent checkbox is clicked.
  */
 function displayShots() {
+    let rps_checked = document.getElementById("rps").checked;
+    let rpsls_checked = document.getElementById("rpsls").checked;
+    if (!rps_checked && !rpsls_checked) {
+        alert("Please select a game mode before going to opponent mode.");
+        document.getElementById("opponent").checked = false;
+        throw new RangeError(`Must select game mode before going to opponent mode.`);
+    }
     let shot_options = document.getElementById("shot_options");
     let opponent_checked = document.getElementById("opponent").checked;
     shot_options.className = opponent_checked ? "active" : "inactive";
@@ -17,23 +24,17 @@ function displayShots() {
  * Called when RPS or RPSLS is clicked.
  */
 function displayRPSLSOptions() {
-    let rps_checked = document.getElementById("rps").checked;
     let rpsls_checked = document.getElementById("rpsls").checked;
-    if (!rps_checked && !rpsls_checked) {
-        alert("Please select a game mode before going to opponent mode.");
-        document.getElementById("opponent").checked = false;
-        return;
-    }
 
     let rps_options = document.getElementsByName("rps_option");
-    for (let i = 0; i < rps_options.length; i++) {
-        rps_options[i].className = "active";
-    }
+    rps_options.forEach((rps_option) => {
+        rps_option.className = "active";
+    });
 
     let rpsls_options = document.getElementsByName("rpsls_option");
-    for (let i = 0; i < rpsls_options.length; i++) {
-        rpsls_options[i].className = rpsls_checked ? "active" : "inactive";
-    }
+    rpsls_options.forEach((rpsls_option) => {
+        rpsls_option.className = rpsls_checked ? "active" : "inactive";
+    });
 }
 
 // Navigation buttons
