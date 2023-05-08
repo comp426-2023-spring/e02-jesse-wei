@@ -1,12 +1,64 @@
 <html>
     <head>
-        <title>Rock</title>
+        <title>RPSLS</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js"></script>
     </head>
     <body>
 
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
+
+    <!-- Choose between RPS and RPSLS and whether playing against opponent -->
+    <div id="game_options">
+        <input type="radio" id="rps" name="game_option" value="rps">
+        <label for="rps">Play Rock, Paper, Scissors?</label>
+        <br>
+        <input type="radio" id="rpsls" name="game_option" value="rpsls">
+        <label for="rpsls">Play Rock, Paper, Scissors, Lizard, Spock?</label>
+        <br><br>
+        <input type="checkbox" id="opponent" name="opponent_option" value="opponent">
+        <label for="opponent">Play against an opponent?</label>
+    </div>
+
+    <br><br>
+
+    <!-- Show RPS or RPSLS options if opponent checkbox is checked -->
+    <div id="shot_options">
+        <input type="radio" id="rock" name="shot_option" value="rock">
+        <label for="rock">Rock</label>
+        <br>
+        <input type="radio" id="paper" name="shot_option" value="paper">
+        <label for="paper">Paper</label>
+        <br>
+        <input type="radio" id="scissors" name="shot_option" value="scissors">
+        <label for="scissors">Scissors</label>
+        <br>
+        <input type="radio" id="lizard" name="shot_option" value="lizard">
+        <label for="lizard">Lizard</label>
+        <br>
+        <input type="radio" id="spock" name="shot_option" value="spock">
+        <label for="spock">Spock</label>
+    </div>
+
+
+    <!-- Result -->
+    <p id="result" class="inactive">
+        <br><br>
+        Result text
+    </p>
+
+    <br><br>
+
+    <!-- Play and start over buttons -->
+    <div id="buttons">
+        <button id="play" name="control_option">Play</button>
+        <button id="start_over" name="control_option">Start Over</button>
+    </div>
 
     </body>
 </html>

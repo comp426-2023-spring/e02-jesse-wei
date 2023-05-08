@@ -6,3 +6,23 @@ h1 {
 
 p {
 }
+
+p.active {
+    display: block;
+}
+
+p.inactive {
+    display: none;
+}
+
+div.active {
+    display: block;
+}
+
+div.inactive {
+    display: none;
+}
+
+center {
+    text-align: center;
+}
