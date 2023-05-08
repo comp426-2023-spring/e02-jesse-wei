@@ -11,9 +11,8 @@ function displayShots() {
     let rps_checked = document.getElementById("rps").checked;
     let rpsls_checked = document.getElementById("rpsls").checked;
     if (!rps_checked && !rpsls_checked) {
-        alert("Please select a game mode before going to opponent mode.");
-        document.getElementById("opponent").checked = false;
-        throw new RangeError(`Must select game mode before going to opponent mode.`);
+        // If neither RPS nor RPSLS is checked, check RPS
+        document.getElementById("rps").click();
     }
     let shot_options = document.getElementById("shot_options");
     let opponent_checked = document.getElementById("opponent").checked;
