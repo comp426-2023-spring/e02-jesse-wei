@@ -57,7 +57,3 @@ button.active {
 button.inactive {
     display: none;
 }
-
-center {
-    text-align: center;
-}
