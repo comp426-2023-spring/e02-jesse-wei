@@ -7,6 +7,16 @@ h1 {
 p {
 }
 
+input {
+
+}
+
+button {
+    background-color: #D2E1F1;
+    border-radius: 10px;
+    border-color: #000000;
+}
+
 p.active {
     display: block;
 }
