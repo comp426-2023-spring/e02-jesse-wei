@@ -6,6 +6,8 @@
 
 /**
  * Called when opponent checkbox is clicked.
+ * Show or hide shot options depending on whether opponent is checked.
+ * If opponent is checked but neither game is selected, assume RPS (click RPS).
  */
 function displayShots() {
     let rps_checked = document.getElementById("rps").checked;
@@ -19,17 +21,19 @@ function displayShots() {
     shot_options.className = opponent_checked ? "active" : "inactive";
 }
 
-/**
+/** 
  * Called when RPS or RPSLS is clicked.
+ * In either case, RPS shot options are set to active (but possibly not displayed since the shot_options
+ * div may be inactive).
+ * If RPSLS is checked, then RPSLS shot options are set to active and vice versa.
  */
 function displayRPSLSOptions() {
-    let rpsls_checked = document.getElementById("rpsls").checked;
-
     let rps_shot_options = document.getElementsByName("rps_shot_option");
     rps_shot_options.forEach(rps_shot_option => {
         rps_shot_option.className = "active"
     })
 
+    let rpsls_checked = document.getElementById("rpsls").checked;
     let rpsls_shot_options = document.getElementsByName("rpsls_shot_option");
     rpsls_shot_options.forEach(rpsls_shot_option => {
         rpsls_shot_option.className = rpsls_checked ? "active" : "inactive";
@@ -40,7 +44,8 @@ function displayRPSLSOptions() {
 
 /**
  * Play button
- * Disables everything except result.
+ * Hides everything except result.
+ * Uses API endpoint to get result JSON and display in result element.
  */
 async function play() {
     let rps_checked = document.getElementById("rps").checked;
@@ -86,7 +91,7 @@ async function play() {
 
 /**
  * Start over button.
- * Sets everything to default values.
+ * Sets everything to default values (hardcoded).
  */
 function startOver() {
     document.getElementById("game_options").className = "active";
