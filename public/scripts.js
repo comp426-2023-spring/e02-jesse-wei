@@ -80,6 +80,9 @@ async function play() {
                 console.log(result);
                 let result_element = document.getElementById("result");
                 if (opponent_checked) {
+                    // NOTE: This does not render properly on GitHub.
+                    // Click Raw (https://raw.githubusercontent.com/comp426-2023-spring/e02-jesse-wei/main/public/scripts.js)
+                    // To see what the code actually is
                     result_element.innerHTML = `<p>You: ${capitalizeFirstLetter(result.player)}</p>
                     <p>Your opponent: ${capitalizeFirstLetter(result.opponent)}</p>
                     <p>Result: You ${result.result.toUpperCase()}</p>`;
