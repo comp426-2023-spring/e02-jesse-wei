@@ -3,28 +3,38 @@
 // https://github.com/jdmar3/coinserver
 
 // Shot options
+
+/**
+ * Called when opponent checkbox is clicked.
+ */
 function displayShots() {
-    let opponent_checked = document.getElementById("opponent").checked;
     let shot_options = document.getElementById("shot_options");
-    let rps_checked = document.getElementById("rps").checked;
-    let rpsls_checked = document.getElementById("rpsls").checked;
-    if (opponent_checked) {
-        shot_options.className = "active";
-        if (!rps_checked && !rpsls_checked) {
-            alert("Please select a game mode.");
-            throw new RangeError(`Must select game mode before going to opponent mode.`);
-        } else if (rps_checked) {
-            document.getElementById("lizard").className = "inactive";
-            document.getElementById("spock").className = "inactive";
-        } else {
-            document.getElementById("lizard").className = "active";
-            document.getElementById("spock").className = "active";
-        }
-    } else {
-        shot_options.className = "inactive";
-    }
+    let opponent_checked = document.getElementById("opponent").checked;
+    shot_options.className = opponent_checked ? "active" : "inactive";
 }
 
+/**
+ * Called when RPS or RPSLS is clicked.
+ */
+function displayRPSLSOptions() {
+    let rps_checked = document.getElementById("rps").checked;
+    let rpsls_checked = document.getElementById("rpsls").checked;
+    if (!rps_checked && !rpsls_checked) {
+        alert("Please select a game mode before going to opponent mode.");
+        document.getElementById("opponent").checked = false;
+        return;
+    }
+
+    let rps_options = document.getElementsByName("rps_option");
+    for (let i = 0; i < rps_options.length; i++) {
+        rps_options[i].className = "active";
+    }
+
+    let rpsls_options = document.getElementsByName("rpsls_option");
+    for (let i = 0; i < rpsls_options.length; i++) {
+        rpsls_options[i].className = rpsls_checked ? "active" : "inactive";
+    }
+}
 
 // Navigation buttons
 
