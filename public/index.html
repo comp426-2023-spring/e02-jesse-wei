@@ -16,13 +16,13 @@
 
     <!-- Choose between RPS and RPSLS and whether playing against opponent -->
     <div id="game_options" class="active">
-        <input type="radio" id="rps" name="game_option" value="rps" unchecked>
+        <input type="radio" id="rps" name="game_option" value="rps" unchecked onclick="displayShots()">
         <label for="rps">Play Rock, Paper, Scissors</label>
         <br>
-        <input type="radio" id="rpsls" name="game_option" value="rpsls" unchecked>
+        <input type="radio" id="rpsls" name="game_option" value="rpsls" unchecked onclick="displayShots()">
         <label for="rpsls">Play Rock, Paper, Scissors, Lizard, Spock</label>
         <br><br>
-        <input type="checkbox" id="opponent" name="opponent_option" value="opponent" unchecked>
+        <input type="checkbox" id="opponent" name="opponent_option" value="opponent" unchecked onclick="displayShots()">
         <label for="opponent">Play against an opponent</label>
         <br><br>
     </div>

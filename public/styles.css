@@ -24,10 +24,18 @@ div.inactive {
 }
 
 input.active {
-    display: block;
+    display: inline;
 }
 
 input.inactive {
+    display: none;
+}
+
+label.active {
+    display: inline;
+}
+
+label.inactive {
     display: none;
 }
 
