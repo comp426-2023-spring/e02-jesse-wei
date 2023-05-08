@@ -15,21 +15,21 @@
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
 
     <!-- Choose between RPS and RPSLS and whether playing against opponent -->
-    <div id="game_options">
-        <input type="radio" id="rps" name="game_option" value="rps">
+    <div id="game_options" class="active">
+        <input type="radio" id="rps" name="game_option" value="rps" unchecked>
         <label for="rps">Play Rock, Paper, Scissors</label>
         <br>
-        <input type="radio" id="rpsls" name="game_option" value="rpsls">
+        <input type="radio" id="rpsls" name="game_option" value="rpsls" unchecked>
         <label for="rpsls">Play Rock, Paper, Scissors, Lizard, Spock</label>
         <br><br>
-        <input type="checkbox" id="opponent" name="opponent_option" value="opponent">
+        <input type="checkbox" id="opponent" name="opponent_option" value="opponent" unchecked>
         <label for="opponent">Play against an opponent</label>
+        <br><br>
     </div>
 
-    <br><br>
 
     <!-- Show RPS or RPSLS options if opponent checkbox is checked -->
-    <div id="shot_options">
+    <div id="shot_options" class="inactive">
         <input type="radio" id="rock" name="shot_option" value="rock">
         <label for="rock">Rock</label>
         <br>
@@ -44,24 +44,24 @@
         <br>
         <input type="radio" id="spock" name="shot_option" value="spock">
         <label for="spock">Spock</label>
+        <br><br>
     </div>
 
 
     <!-- Result -->
     <p id="result" class="inactive">
-        <br><br>
         Result text
+        <br><br>
     </p>
 
-    <br><br>
 
     <!-- Play and start over buttons -->
-    <div id="buttons">
-        <button id="play" type="submit" name="control_option">Play</button>
-        <button id="start_over" type="submit" name="control_option">Start Over</button>
+    <div id="buttons" class="active">
+        <button id="play" type="submit" name="control_option" onclick="play()">Play</button>
+        <button id="start_over" type="submit" name="control_option" onclick="startOver()">Start Over</button>
+        <br><br>
     </div>
 
-    <br><br>
 
     <!-- Link to rules -->
     <p><a href="rules.html">Rules for RPSLS</a></p>

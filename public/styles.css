@@ -23,6 +23,23 @@ div.inactive {
     display: none;
 }
 
+input.active {
+    display: block;
+}
+
+input.inactive {
+    display: none;
+}
+
+button.active {
+    /* display: block makes the buttons vertical */
+    display: inline;
+}
+
+button.inactive {
+    display: none;
+}
+
 center {
     text-align: center;
 }
